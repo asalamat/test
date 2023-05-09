@@ -1,0 +1,12 @@
+---
+- hosts: all
+  connection: local
+  
+  vars:
+    storage_gb: 50
+    storage_mb: "{{ storage_gb * 1024 }}"
+  
+  tasks:
+    - name: Debug storage size mb
+      debug:
+        msg: 'Ensure this is 51200: {{ storage_mb }}'
